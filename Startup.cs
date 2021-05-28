@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BenchmarkDotNet.Running;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,7 @@ namespace GenericApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GenericApi", Version = "v1" });
             });
+            var summary = BenchmarkRunner.Run<PerformanceHarness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
