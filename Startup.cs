@@ -32,7 +32,7 @@ namespace GenericApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GenericApi", Version = "v1" });
+                c.SwaggerDoc("v12", new OpenApiInfo { Title = "GenericApi", Version = "v1" });
             });
             var summary = BenchmarkRunner.Run<PerformanceHarness>();
         }
